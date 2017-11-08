@@ -7,10 +7,14 @@ import { Angular2TokenService } from "angular2-token";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
