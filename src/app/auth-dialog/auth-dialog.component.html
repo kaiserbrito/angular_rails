@@ -1,0 +1,19 @@
+<div class="modal" materialize="modal" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <div class="row">
+      <div class="row">
+        <span class="modal-close right">
+          <i class="fa fa-time" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="row">
+        <span *ngIf="isLoginMode()">
+          Don't you have an account? <a (click)="authMode='register'">Click here to register</a>
+        </span>
+        <span *ngIf="isRegisterMode()">
+          Already have an account? <a (click)="authMode='login'">Click here</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

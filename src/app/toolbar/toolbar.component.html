@@ -3,11 +3,20 @@
         <div class="nav-wrapper blue">
             <a [routerLink]="['']" id="logo-containet" class="brand-logo">Rails and Angular</a>
             <ul class="right hide-on-med-and-down">
-                <li><a>Login</a></li>
-                <li><a>Register</a></li>
-                <li><a>Profile</a></li>
-                <li><a>Logout</a></li>                
+                <li *ngIf="!tokenAuthService.userSignedIn()">
+                    <a (click)="presentAuthDialog()">Login</a>
+                </li>
+                <li *ngIf="!tokenAuthService.userSignedIn()">
+                    <a (click)="presentAuthDialog('register')">Register</a>
+                </li>
+                <li *ngIf="!tokenAuthService.userSignedIn()">
+                    <a [routerLink]="['/profile']">Profile</a>
+                </li>
+                <li *ngIf="!tokenAuthService.userSignedIn()">
+                    <a>Logout</a>
+                </li>                
             </ul>
         </div>
     </nav>
 </div>
+<app-auth-dialog #authDialog></app-auth-dialog>
