@@ -1,18 +1,18 @@
 <div class="navbar-fixed">
     <nav role="navigation">
         <div class="nav-wrapper blue">
-            <a [routerLink]="['']" id="logo-containet" class="brand-logo">Rails and Angular</a>
+            <a [routerLink]="['']" id="logo-container" class="brand-logo">Rails and Angular</a>
             <ul class="right hide-on-med-and-down">
-                <li *ngIf="!tokenAuthService.userSignedIn()">
+                <li *ngIf="!(authService.userSignedIn$ | async)">
                     <a (click)="presentAuthDialog()">Login</a>
                 </li>
-                <li *ngIf="!tokenAuthService.userSignedIn()">
+                <li *ngIf="!(authService.userSignedIn$ | async)">
                     <a (click)="presentAuthDialog('register')">Register</a>
                 </li>
-                <li *ngIf="!tokenAuthService.userSignedIn()">
+                <li *ngIf="!(authService.userSignedIn$ | async)">
                     <a [routerLink]="['/profile']">Profile</a>
                 </li>
-                <li *ngIf="!tokenAuthService.userSignedIn()">
+                <li *ngIf="!(authService.userSignedIn$ | async)">
                     <a>Logout</a>
                 </li>                
             </ul>
