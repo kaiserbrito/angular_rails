@@ -13,7 +13,7 @@ export class AppComponent {
     this.authToken.init(environment.token_auth_config);
 
     // Test the connection
-    this.authToken.signIn({email: "example@example.com", password: "12345"}).subscribe(
+    this.authToken.signIn({email: "example@example.com", password: "master123"}).subscribe(
       res => {
         console.log('auth response:', res);
         console.log('auth response headers: ', res.headers.toJSON());
