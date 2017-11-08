@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { MaterializeModule } from "angular2-materialize";
 import { Angular2TokenService } from "angular2-token";
 
@@ -13,6 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpModule,
     MaterializeModule
   ],
   providers: [Angular2TokenService],
